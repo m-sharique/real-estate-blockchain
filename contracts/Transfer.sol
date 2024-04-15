@@ -1,35 +1,27 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity ^0.8.0;
 
-// SPDX-License-Identifier: MIT
-import "./Ownable.sol";
-import "./Property.sol";
+import "./Property.sol"; // Assuming Property.sol is in the same directory
 
-contract Transfer is Ownable, Property {
+contract Transfer {
 
-  // Event for successful property transfer
-  event OwnershipTransferred(uint256 propertyId, address from, address to);
+  Property public propertyContract;  // Instance of the Property contract
 
-  // Function to transfer ownership of a property (restricted by onlyOwner modifier)
-  function transferOwnership(uint256 propertyId, address payable newOwner) public onlyOwner {
-    // Verify ownership of the property being transferred (inherited from Property.sol)
-    require(verifyOwnership(propertyId), "Unauthorized transfer attempt");
-
-    // Update the owner address in the ipfsHashes mapping (inherited from Property.sol)
-    ipfsHashes[propertyId] = ""; // Consider alternative for ownership tracking on IPFS (optional)
-
-    // Update the owner in the PropertyDetails struct (consider alternative for ownership tracking on-chain)
-    PropertyDetails storage details = getPropertyDetails(propertyId); // Placeholder, implement a function to retrieve details
-    details.owner = newOwner;
-
-    // Emit an event to record the ownership transfer
-    emit OwnershipTransferred(propertyId, msg.sender, newOwner);
+  constructor(address _propertyContract) {
+    propertyContract = Property(_propertyContract);
   }
 
-  // Function to retrieve property details (placeholder, implement details based on your chosen approach)
-  function getPropertyDetails(uint256 propertyId) public view returns (PropertyDetails storage) {
-    // Replace with actual logic to retrieve property details from storage (on-chain or off-chain) based on your implementation
-    revert("Not implemented"); // Placeholder to indicate functionality needs implementation
+  // Function to transfer ownership (assuming verified off-chain)
+  function transferProperty(uint256 propertyId, address newOwner) public {
+    require(propertyContract.propertyDetails(propertyId).owner == msg.sender, "Not authorized for transfer");
+
+    // Assuming off-chain verification has already confirmed new owner
+    propertyContract.propertyDetails[propertyId].owner = newOwner;
+
+    // Emit an event to notify about the transfer
+    emit PropertyTransferred(propertyId, msg.sender, newOwner);
   }
+
+  // Event emitted when a property is transferred
+  event PropertyTransferred(uint256 propertyId, address oldOwner, address newOwner);
 }
-
