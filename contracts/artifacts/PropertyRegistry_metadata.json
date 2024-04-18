@@ -1,0 +1,141 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPropertyOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "properties",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "registerProperty",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PropertyRegistry.sol": "PropertyRegistry"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Ownable.sol": {
+			"keccak256": "0xdf339ce7e88dfb539137df0eddb3800e21619814223552d79f1a098dc0bb6f72",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://dcba779d3a60718aed154d7fe24836f0cead2b0165ec3c07026644285d67eb21",
+				"dweb:/ipfs/QmTjvgWfWQCNk3Fr6YW4sMfQfJrEQxuNvhV5esixvgmQfy"
+			]
+		},
+		"contracts/PropertyRegistry.sol": {
+			"keccak256": "0x21a0f5bab94eaace61e3b9501321e8e1325dae7a02a905d0f95f1069b4cc5503",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a1c68959d62986d48ab12a1fbf0fea813dc36193300f9e88af4288bb5636e44a",
+				"dweb:/ipfs/QmcxmhVqraVfBHByT5rZhf5p5FNQKX3xUkvkmV7zCb8F4N"
+			]
+		}
+	},
+	"version": 1
+}
