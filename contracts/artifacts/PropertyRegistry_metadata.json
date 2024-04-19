@@ -6,6 +6,50 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "propertyId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "PropertyRegistered",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -121,19 +165,19 @@
 	},
 	"sources": {
 		"contracts/Ownable.sol": {
-			"keccak256": "0xdf339ce7e88dfb539137df0eddb3800e21619814223552d79f1a098dc0bb6f72",
+			"keccak256": "0x307401120b6904471a601ce213a697fe185529a4372e97a67fad16d64ca34bc3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dcba779d3a60718aed154d7fe24836f0cead2b0165ec3c07026644285d67eb21",
-				"dweb:/ipfs/QmTjvgWfWQCNk3Fr6YW4sMfQfJrEQxuNvhV5esixvgmQfy"
+				"bzz-raw://5aee6c601576347526ac40faaf7b0600337e0d91df4eaa74da928c7eb711d22c",
+				"dweb:/ipfs/Qmco2nqSjEzwm7Ke32bdoYMgaA1ms71bKwNURwUvCox5CC"
 			]
 		},
 		"contracts/PropertyRegistry.sol": {
-			"keccak256": "0x21a0f5bab94eaace61e3b9501321e8e1325dae7a02a905d0f95f1069b4cc5503",
+			"keccak256": "0xbe87cac739c974b23b27ff723d367768f0972223e09261b5ae527b1202cba034",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a1c68959d62986d48ab12a1fbf0fea813dc36193300f9e88af4288bb5636e44a",
-				"dweb:/ipfs/QmcxmhVqraVfBHByT5rZhf5p5FNQKX3xUkvkmV7zCb8F4N"
+				"bzz-raw://1a3faa7a91c6fc1d1d22bb60520a57e177b09ea97e77ddc4eeba79d0c86386ab",
+				"dweb:/ipfs/QmPrrsh2sDvgHu3GUE936dAwudnCSgZhh3er5QecatHmDp"
 			]
 		}
 	},
